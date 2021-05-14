@@ -22,7 +22,7 @@ function App() {
         </Route>
         
         {/* Details page */}
-
+        <Route />
         {/* Add Movie page */}
         <Route exact path="/addMovie" component={AddMovie} />
       </Router>
