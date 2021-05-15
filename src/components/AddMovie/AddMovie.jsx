@@ -11,6 +11,10 @@ function addMovie () {
 
     const genres = useSelector(store => store.genres);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({type: 'ADD_MOVIE', payload: {title: title, poster: poster, description: description, genre_id: genres}})
+    }
 
     useEffect(() => {
         dispatch({type: 'SET_MOVIE_GENRE'})
@@ -18,17 +22,16 @@ function addMovie () {
 
     return(
         <div>
-            <form>
+            <form onClick={handleSubmit}>
                 <input type="text" placeholder="Movie Title" value={title} onChange={(event) => setTitle(event.target.value)} />
                 <input type="text" placeholder="Movie Poster URL" value={poster} onChange={(event) => setPoster(event.target.value)}/>
                 <input type="text" placeholder="Description" value={description} onChange={(event) => setDescription(event.target.value)} />
                 <select>
-                    <option placeholder="Genre">Genre</option>
                     {genres.map(item => {
                         return <option key={item.id} value={item.id}>{item.name}</option>
                     })}
                 </select>
-                <button>Cancel</button>
+                {/* <button>Cancel</button> */}
                 <button>Save</button>
             </form>
         </div>

@@ -56,11 +56,11 @@ function* fetchMovieGenres () {
 function* addMovie(action) {
     //add movie to list/DB
     try{
-        yield axios.post('/addMovie', action.payload)
+        yield axios.post('/api/movie', action.payload)
         yield put ({type: 'FETCH_MOVIES'})
     }
     catch(error) {
-        alert(`Sorry I couldn't add that movie`);
+        // alert(`Sorry I couldn't add that movie`);
         console.log(`Error adding movie`, error);
     }
 };
