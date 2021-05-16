@@ -34,8 +34,9 @@ function* fetchAllMovies() {
 function* fetchMovieDetails(action) {
     //get movie details from DB on click
     try {
-        const details = yield axios.get(`api/movie/details/${action.payload}`)
+        const details = yield axios.get(`/api/details/`)
         yield put({ type: 'GET_DETAILS', payload: details.data})
+        console.log(action.payload);
     }
     catch(error) {
         console.log(`Error in FetchMovieDetails`, error);
@@ -93,7 +94,7 @@ const details = (state = [], action) => {
     switch (action.type) {
         case 'GET_DETAILS':
             return action.payload;
-            case 'CLEAR_DETAILS':
+        case 'CLEAR_DETAILS':
             return action.payload;
         default:
             return state;

@@ -1,4 +1,3 @@
-const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
@@ -12,11 +11,11 @@ const pool = require('../modules/pool');
 //         })
 // })
 
-router.get('/details/:id', (req, res) => {
+router.get('/details', (req, res) => {
     const query = `SELECT movies.title, movies.poster, movies.description, 
                         ARRAY_AGG(genres.name) as genres FROM movies
-                    JOIN movies_genres on movies_genres.movie_id =movies.id
-                    JOIN genres on genres.id = movies_genres.genre_id
+                    JOIN movies_genres on movies.id = movies_genres.movie_id 
+                    JOIN genres on movies_genres.genre_id = genres.id 
                     WHERE movies.id = $1
                     GROUP BY movies.title, movies.poster, movies.description;`;
     pool.query(query, [req.params.id])
@@ -29,3 +28,5 @@ router.get('/details/:id', (req, res) => {
             res.sendStatus(500);
         })
 })
+
+module.exports = router;

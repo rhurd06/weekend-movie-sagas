@@ -1,0 +1,34 @@
+.title {
+  margin-right: 1rem;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.poster {
+  margin-right: 1rem;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.description {
+  margin-right: 1rem;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.genres {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.saveButton {
+  margin-top: 1rem;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cancelButton {
+  margin-top: 1rem;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

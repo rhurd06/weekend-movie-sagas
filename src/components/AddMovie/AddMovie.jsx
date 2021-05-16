@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory} from 'react-router-dom';
 
+import './AddMovie.css';
+
 
 function addMovie () {
 
@@ -35,19 +37,19 @@ function addMovie () {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Movie Title" value={title} onChange={(event) => setTitle(event.target.value)} />
-                <input type="text" placeholder="Movie Poster URL" value={poster} onChange={(event) => setPoster(event.target.value)}/>
-                <input type="text" placeholder="Description" value={description} onChange={(event) => setDescription(event.target.value)} />
-                <select onChange={(event)=> setGenre(event.target.value)}>
+                <input type="text" className="title" placeholder="Movie Title" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <input type="text" className="poster" placeholder="Movie Poster URL" value={poster} onChange={(event) => setPoster(event.target.value)}/>
+                <input type="text" className="description" placeholder="Description" value={description} onChange={(event) => setDescription(event.target.value)} />
+                <select className="genres" onChange={(event)=> setGenre(event.target.value)}>
                     <option>ChooseGenre</option>
                     {genres.map(item => {
                         return <option key={item.id} value={item.id}>{item.name}</option>
                     })}
                 </select>
-                {/* <button>Cancel</button> */}
-                <button>Save</button>
+                <br />
+                <button className="saveButton">Save</button>
             </form>
-            <button onClick={click}>Cancel</button>
+            <button className="cancelButton" onClick={click}>Cancel</button>
         </div>
     )
 }

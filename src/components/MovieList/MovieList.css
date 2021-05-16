@@ -1,4 +1,6 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }

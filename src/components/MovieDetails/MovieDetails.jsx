@@ -5,25 +5,26 @@ import { useEffect } from 'react';
 
 function MovieDetails () {
     const history = useHistory();
-    const details = useSelector(store => store.detailsReducer);
+    const details = useSelector(store => store.details);
     const dispatch = useDispatch();
 
     // let {id} = useParams();
 
-    useEffect(() => {
-        // dispatch({type: 'SET_MOVIE_DETAILS', payload: id});
-    }, []);
+    // //on page load get movie details
+    // useEffect(() => {
+    //     dispatch({type: 'SET_MOVIE_DETAILS', payload: id});
+    // }, []);
 
 
     const handleSubmit = () => {
-        console.log(`clicked back to ml`);
+        console.log(`clicked back to movieList`);
         dispatch({type: 'CLEAR_DETAILS', payload: []});
         history.push('/');
     };
 
     return (
         <div>
-            <p>
+            <div>
                 {details.map(details => {
                     return (
                         <div key={details.id}>
@@ -34,7 +35,7 @@ function MovieDetails () {
                         </div>
                     )
                 })}
-            </p>
+            </div>
             <button onClick={()=> handleSubmit()}>Back to Movies List</button>
         </div>
     )
