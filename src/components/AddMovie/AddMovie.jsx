@@ -23,6 +23,9 @@ function addMovie () {
         console.log(title, poster, description, genre);
         dispatch({type: 'ADD_MOVIE', 
         payload: {title: title, poster: poster, description: description, genre_id: genre}});
+        setTitle('');
+        setPoster('');
+        setDescription('');
     }
 
     const click = () => {
