@@ -14,7 +14,7 @@ function MovieList() {
 
     const goToDetails = (id) => {
         console.log('clicked');
-        dispatch({type: 'SET_MOVIE_DETAILS', payload: id});
+        dispatch({type: 'SET_MOVIE_DETAILS', payload: movies.id});
         history.push(`/movieDetails/`);
     }
 
