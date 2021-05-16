@@ -34,7 +34,7 @@ function* fetchAllMovies() {
 function* fetchMovieDetails(action) {
     //get movie details from DB on click
     try {
-        const details = yield axios.get(`api/movie/${action.payload}`)
+        const details = yield axios.get(`api/movie/details/${action.payload}`)
         yield put({ type: 'GET_DETAILS', payload: details.data})
     }
     catch(error) {
@@ -58,9 +58,10 @@ function* addMovie(action) {
     try{
         yield axios.post('/api/movie', action.payload)
         yield put ({type: 'FETCH_MOVIES'})
+        console.log(action.payload);
     }
     catch(error) {
-        // alert(`Sorry I couldn't add that movie`);
+        alert(`Sorry I couldn't add that movie`);
         console.log(`Error adding movie`, error);
     }
 };
