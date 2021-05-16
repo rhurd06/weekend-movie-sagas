@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 function MovieDetails () {
     const history = useHistory();
     const details = useSelector(store => store.detailsReducer);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     // let {id} = useParams();
 
@@ -17,25 +17,24 @@ function MovieDetails () {
 
     const handleSubmit = () => {
         console.log(`clicked back to ml`);
+        dispatch({type: 'CLEAR_DETAILS', payload: []});
         history.push('/');
     };
 
     return (
         <div>
-            <h3>{details.movie.title}</h3>
-            <img src={details.movie.poster} alt={details.movie.title} />
-            <p>{details.movie.description}</p>
-            {details.genres != undefined ? (
-                <ul>
-                    {details.genres.map(i => {
-                        if(i.movie_id == details.movie.id){
-                            return <li key={i.genre_id}>{i.name}</li>
-                        }
-                    })}
-                </ul>
-            ):(
-                ''
-            )}
+            <p>
+                {details.map(details => {
+                    return (
+                        <div key={details.id}>
+                            <h3>{details.title}</h3>
+                            <img src={details.poster} alt={details.title} />
+                            {details.description}
+                            {details.genre}
+                        </div>
+                    )
+                })}
+            </p>
             <button onClick={()=> handleSubmit()}>Back to Movies List</button>
         </div>
     )
