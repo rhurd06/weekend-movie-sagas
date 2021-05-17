@@ -11,7 +11,7 @@ const pool = require('../modules/pool');
 //         })
 // })
 
-router.get('/details', (req, res) => {
+router.get('/:id', (req, res) => {
     const query = `SELECT movies.title, movies.poster, movies.description, 
                         ARRAY_AGG(genres.name) as genres FROM movies
                     JOIN movies_genres on movies.id = movies_genres.movie_id 

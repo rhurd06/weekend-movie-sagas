@@ -8,14 +8,15 @@ function MovieDetails () {
     const details = useSelector(store => store.details);
     const dispatch = useDispatch();
 
-    // let {id} = useParams();
+    let {id} = useParams();
 
-    // //on page load get movie details
-    // useEffect(() => {
-    //     dispatch({type: 'SET_MOVIE_DETAILS', payload: id});
-    // }, []);
+    //on page load get movie details
+    useEffect(() => {
+        dispatch({type: 'SET_MOVIE_DETAILS', payload: id});
+    }, []);
 
-
+//clear the detail page 
+//bring user back to home page
     const handleSubmit = () => {
         console.log(`clicked back to movieList`);
         dispatch({type: 'CLEAR_DETAILS', payload: []});
