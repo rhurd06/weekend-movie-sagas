@@ -30,8 +30,6 @@ function MovieDetails () {
                     return (
                         <div key={details.id}>
                             <h3>{details.title}</h3>
-                            <img src={details.poster} alt={details.title} />
-                            {details.description}
                             <ul>
                                 {details.genres.map(genre => {
                                     return(
@@ -39,6 +37,8 @@ function MovieDetails () {
                                     )
                                 })}
                             </ul>
+                            <img src={details.poster} alt={details.title} />
+                            {details.description}
                         </div>
                     )
                 })}
