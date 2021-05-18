@@ -32,7 +32,13 @@ function MovieDetails () {
                             <h3>{details.title}</h3>
                             <img src={details.poster} alt={details.title} />
                             {details.description}
-                            {details.genre}
+                            <ul>
+                                {details.genres.map(genre => {
+                                    return(
+                                        <li>{genre}</li>
+                                    )
+                                })}
+                            </ul>
                         </div>
                     )
                 })}
