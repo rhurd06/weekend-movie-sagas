@@ -10,5 +10,3 @@ You'll need to create the database as included in the file and get some practice
 
 The programs you'll need are all included once you've done your npm install.
 To get the site up in your browser use npm run server and npm run client in separate terminal windows.
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

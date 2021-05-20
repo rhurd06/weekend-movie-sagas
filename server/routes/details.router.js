@@ -11,7 +11,7 @@ router.get('/:id', (req, res) => {
                     GROUP BY movies.title, movies.poster, movies.description;`;
     pool.query(query, [req.params.id])
         .then(result => {
-            console.log(`in details router.get`);
+            // console.log(`in details router.get`);
             res.send(result.rows)
         })
         .catch(error => {
