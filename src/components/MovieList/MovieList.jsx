@@ -3,16 +3,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 // Material UI Imports
-import { Card } from '@mui/material/Card';
+import { Card, CardContent, Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
+// Import styling
 import './MovieList.css'
+
+const useStyles = makeStyles(theme => ({
+    input: {
+        height: 50,
+        width: 500,
+        marginRight: 15,
+    }
+}));
 
 function MovieList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    
-    
+    const classes = useStyles();
+    // to get movie list 
     const movies = useSelector(store => store.movies);
 
     //bring user to details page with info on specific movie
@@ -28,19 +37,38 @@ function MovieList() {
     }, []);
 
     return (
-        <main>
-            <h1>MovieList</h1>
-            <section className="movies">
+        <Container>
+            <Typography
+            align='center'
+            variant='h1'
+            >
+                MovieList
+            </Typography>
+            <Grid
+                container
+                align='center'
+            >
+            {/* <section className="movies"> */}
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} onClick={() => goToDetails(movie)}>
-                            <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
-                        </div>
+                        <Card 
+                            key={movie.id}
+                            className={classes.root} 
+                        >
+                            <CardContent>
+                            {/* <h3>{movie.title}</h3> */}
+                            <img 
+                                src={movie.poster} 
+                                alt={movie.title}
+                                onClick={() => goToDetails(movie)}
+                            />
+                            </CardContent>
+                        </Card>
                     );
                 })}
-            </section>
-        </main>
+            {/* </section> */}
+            </Grid>
+        </Container>
 
     );
 }
