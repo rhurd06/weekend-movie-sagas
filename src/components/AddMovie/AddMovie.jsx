@@ -64,12 +64,13 @@ function addMovie () {
                     required
                     onChange={(event) => setDescription(event.target.value)} 
                 />
-                {/* <InputLabel>Choose Genre</InputLabel>
+                <InputLabel>Choose Genre</InputLabel>
                 <Select
                     form="addMovieForm"
-                    onChange={(event)=> setGenre(event.target.value)}
                     value={genre}
                     variant="filled"
+                    required
+                    onChange={(event)=> setGenre(event.target.value)}
                 >
                     {genres.map(item => {
                         return 
@@ -80,13 +81,13 @@ function addMovie () {
                             {item.name}
                         </MenuItem>
                     })}
-                </Select> */}
-                <select className="genres">
+                </Select>
+                {/* <select className="genres">
                     <option>ChooseGenre</option>
                     {genres.map(item => {
                         return <option key={item.id} value={item.id}>{item.name}</option>
                     })}
-                </select>
+                </select> */}
                 <br />
                 <Button
                     type="submit"
