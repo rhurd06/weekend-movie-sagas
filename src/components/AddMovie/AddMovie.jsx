@@ -88,9 +88,23 @@ function addMovie () {
                     })}
                 </select>
                 <br />
-                <button className="saveButton">Save</button>
+                <Button
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                >
+                    Save
+                </Button>
+                {/* <button className="saveButton">Save</button> */}
             </form>
-            <button className="cancelButton" onClick={click}>Cancel</button>
+            <Button
+                color="secondary"
+                variant="contained"
+                onClick={click}
+            >
+                Cancel
+            </Button>
+            {/* <button className="cancelButton" onClick={click}>Cancel</button> */}
         </Container>
     )
 }
