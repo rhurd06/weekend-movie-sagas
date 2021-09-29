@@ -64,6 +64,24 @@ function addMovie () {
                     required
                     onChange={(event) => setDescription(event.target.value)} 
                 />
+                <TextField
+                select
+                label="Choose Genre"
+                value={genre}
+                variant="filled"
+                required
+                onChange={(event)=> setGenre(event.target.value)}
+                >
+                    {genres.map(item => {
+                        return 
+                        <div
+                            key={item.id} 
+                            value={item.id}
+                        >
+                            {item.name}
+                        </div>
+                    })}
+                </TextField>
                 {/* <InputLabel>Choose Genre</InputLabel> */}
                 {/* <Select
                     form="addMovieForm"
@@ -82,12 +100,12 @@ function addMovie () {
                         </MenuItem>
                     })}
                 </Select> */}
-                <select className="genres">
+                {/* <select className="genres">
                     <option>ChooseGenre</option>
                     {genres.map(item => {
                         return <option key={item.id} value={item.id}>{item.name}</option>
                     })}
-                </select>
+                </select> */}
                 <br />
                 <Button
                     type="submit"
@@ -96,7 +114,6 @@ function addMovie () {
                 >
                     Save
                 </Button>
-                {/* <button className="saveButton">Save</button> */}
             </form>
             <Button
                 color="secondary"
@@ -105,7 +122,6 @@ function addMovie () {
             >
                 Cancel
             </Button>
-            {/* <button className="cancelButton" onClick={click}>Cancel</button> */}
         </Container>
     )
 }

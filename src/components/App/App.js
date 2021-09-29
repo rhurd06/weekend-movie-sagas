@@ -5,10 +5,18 @@ import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import AddMovie from '../AddMovie/AddMovie';
 
+import MovieFilterIcon from '@mui/icons-material/MovieFilter';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <AppBar position="relative">
+        <Toolbar className="appBar">
+          <MovieFilterIcon sx={{ fontSize: 80, marginLeft: 50 }} />
+          <Typography variant="h3">The Movies Saga!</Typography>
+        </Toolbar>
+      </AppBar>
       <Router>
         <ul>
           <li>
