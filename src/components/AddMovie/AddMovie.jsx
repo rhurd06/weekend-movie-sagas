@@ -16,7 +16,7 @@ function addMovie () {
     const [title, setTitle] = useState('');
     const [poster, setPoster]  = useState('');
     const [description, setDescription]  = useState('');
-    const [genre, setGenre] = useState(0);
+    const [genre, setGenre] = useState();
 
     useEffect(() => {
         dispatch({type: 'SET_MOVIE_GENRE'})
@@ -48,6 +48,7 @@ function addMovie () {
                     required
                     onChange={(event) => setTitle(event.target.value)}
                 />
+                <br />
                 <TextField
                     value={poster}
                     label="Movie Poster URL"
@@ -56,15 +57,18 @@ function addMovie () {
                     required
                     onChange={(event) => setPoster(event.target.value)}
                 />
+                <br />
                 <TextField
                     value={description}
                     label="Description"
+                    multiline
                     // className={}
                     variant="filled"
                     required
                     onChange={(event) => setDescription(event.target.value)} 
                 />
-                <TextField
+                <br />
+                {/* <TextField
                 select
                 label="Choose Genre"
                 value={genre}
@@ -73,15 +77,15 @@ function addMovie () {
                 onChange={(event)=> setGenre(event.target.value)}
                 >
                     {genres.map(item => {
-                        return 
-                        <div
+                        // return 
+                        <MenuItem
                             key={item.id} 
                             value={item.id}
                         >
                             {item.name}
-                        </div>
+                        </MenuItem>
                     })}
-                </TextField>
+                </TextField> */}
                 {/* <InputLabel>Choose Genre</InputLabel> */}
                 {/* <Select
                     form="addMovieForm"
@@ -100,12 +104,12 @@ function addMovie () {
                         </MenuItem>
                     })}
                 </Select> */}
-                {/* <select className="genres">
+                <select className="genres">
                     <option>ChooseGenre</option>
                     {genres.map(item => {
                         return <option key={item.id} value={item.id}>{item.name}</option>
                     })}
-                </select> */}
+                </select>
                 <br />
                 <Button
                     type="submit"
