@@ -1,6 +1,7 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { Button, Typography } from '@material-ui/core';
 
 
 function MovieDetails () {
@@ -29,7 +30,11 @@ function MovieDetails () {
                 {details.map(details => {
                     return (
                         <div key={details.id}>
-                            <h3>{details.title}</h3>
+                            <Typography
+                                align="center"
+                                variant="h2"
+                            >{details.title}
+                            </Typography>
                             <ul>
                                 {details.genres.map(genre => {
                                     return(
@@ -38,12 +43,24 @@ function MovieDetails () {
                                 })}
                             </ul>
                             <img src={details.poster} alt={details.title} />
-                            {details.description}
+                            <Typography
+                                align="center"
+                                variant="h6"
+                            >
+                                {details.description}
+                            </Typography>
                         </div>
                     )
                 })}
             </div>
-            <button onClick={()=> handleSubmit()}>Back to Movies List</button>
+            <Button
+                color="primary"
+                variant="contained"
+                onClick={()=> handleSubmit()}
+            >
+                Back to Movies
+            </Button>
+            {/* <button onClick={()=> handleSubmit()}>Back to Movies List</button> */}
         </div>
     )
 }
