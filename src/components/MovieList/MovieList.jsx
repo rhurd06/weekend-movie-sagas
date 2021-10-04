@@ -10,10 +10,18 @@ import { Card, CardContent, Container, Grid, makeStyles,
 import './MovieList.css'
 
 const useStyles = makeStyles(theme => ({
+    container: {
+        backgroundColor: "lightgrey"
+    },
     input: {
         height: 50,
         width: 500,
+    },
+    card: {
+        backgroundColor: "#2DDBDE",
         marginRight: 15,
+        marginTop: 15,
+        marginBottom: 15
     }
 }));
 
@@ -38,7 +46,9 @@ function MovieList() {
     }, []);
 
     return (
-        <Container>
+        <Container
+            className={classes.container}
+        >
             <Typography
             align='center'
             variant='h1'
@@ -53,9 +63,11 @@ function MovieList() {
                     return (
                         <Card 
                             key={movie.id}
-                            className={classes.root} 
+                            className={classes.container} 
                         >
-                            <CardContent>
+                            <CardContent
+                                className={classes.card}
+                            >
                             <img 
                                 src={movie.poster} 
                                 alt={movie.title}
