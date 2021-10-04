@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory} from 'react-router-dom';
 // MUI imports
-import { Button, Container, InputLabel, MenuItem, Select, TextField, 
-    Typography } from "@material-ui/core";
+import { Button, Container, MenuItem, TextField } from "@material-ui/core";
 // Styling imports
 import './AddMovie.css';
 
@@ -46,6 +45,7 @@ function addMovie () {
                     // className={}
                     variant="filled"
                     required
+                    fullWidth
                     onChange={(event) => setTitle(event.target.value)}
                 />
                 <br />
@@ -55,6 +55,7 @@ function addMovie () {
                     // className={}
                     variant="filled"
                     required
+                    fullWidth
                     onChange={(event) => setPoster(event.target.value)}
                 />
                 <br />
@@ -65,51 +66,31 @@ function addMovie () {
                     // className={}
                     variant="filled"
                     required
+                    fullWidth
                     onChange={(event) => setDescription(event.target.value)} 
                 />
                 <br />
-                {/* <TextField
-                select
-                label="Choose Genre"
-                value={genre}
-                variant="filled"
-                required
-                onChange={(event)=> setGenre(event.target.value)}
-                >
-                    {genres.map(item => {
-                        // return 
-                        <MenuItem
-                            key={item.id} 
-                            value={item.id}
-                        >
-                            {item.name}
-                        </MenuItem>
-                    })}
-                </TextField> */}
-                {/* <InputLabel>Choose Genre</InputLabel> */}
-                {/* <Select
+                <TextField
+                    select
                     form="addMovieForm"
+                    label="Choose Genre"
                     value={genre}
                     variant="filled"
                     required
+                    fullWidth
                     onChange={(event)=> setGenre(event.target.value)}
                 >
                     {genres.map(item => {
-                        return 
+                        return (
                         <MenuItem
                             key={item.id} 
                             value={item.id}
                         >
                             {item.name}
                         </MenuItem>
+                        )
                     })}
-                </Select> */}
-                <select className="genres">
-                    <option>ChooseGenre</option>
-                    {genres.map(item => {
-                        return <option key={item.id} value={item.id}>{item.name}</option>
-                    })}
-                </select>
+                </TextField>
                 <br />
                 <Button
                     type="submit"
