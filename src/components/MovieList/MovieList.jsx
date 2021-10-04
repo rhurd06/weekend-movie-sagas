@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 // Material UI Imports
-import { Card, CardContent, Container, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Card, CardContent, Container, Grid, makeStyles, 
+    Typography } from '@material-ui/core';
 
 // Import styling
 import './MovieList.css'
@@ -48,7 +49,6 @@ function MovieList() {
                 container
                 align='center'
             >
-            {/* <section className="movies"> */}
                 {movies.map(movie => {
                     return (
                         <Card 
@@ -56,7 +56,6 @@ function MovieList() {
                             className={classes.root} 
                         >
                             <CardContent>
-                            {/* <h3>{movie.title}</h3> */}
                             <img 
                                 src={movie.poster} 
                                 alt={movie.title}
@@ -66,7 +65,6 @@ function MovieList() {
                         </Card>
                     );
                 })}
-            {/* </section> */}
             </Grid>
         </Container>
 
