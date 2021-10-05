@@ -43,6 +43,7 @@ In addition the client would like the ability for users to view all of the infor
 - Redux (Reducers & Sagas)
 - CSS
 - JavaScript, JSX
+- Material UI
 
 ## Acknowledgement
 
