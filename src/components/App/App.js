@@ -8,13 +8,14 @@ import AddMovie from '../AddMovie/AddMovie';
 import MovieFilterIcon from '@mui/icons-material/MovieFilter';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
+
 function App() {
   return (
     <div className="App">
       <AppBar position="relative">
         <Toolbar className="appBar">
-          <MovieFilterIcon sx={{ fontSize: 80, marginLeft: 50 }} />
-          <Typography variant="h3">The Movies Saga!</Typography>
+          <MovieFilterIcon align="center" sx={{ fontSize: 80 }} />
+          <Typography align="center" variant="h3">The Movies Saga!</Typography>
         </Toolbar>
       </AppBar>
       <Router>

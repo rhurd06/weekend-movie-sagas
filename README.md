@@ -15,6 +15,11 @@ Here's an example of what the 'Add Movie' page might look like:
 In addition the client would like the ability for users to view all of the information on the click of a movie. That click should bring the user to a page that would show all genres the movie falls in, the description, poster and title.
 ![Movie](./wireframes/MovieDetailPage.png)
 
+Updated wireframe photos:
+![Movie](./wireframes/movielist.png)
+![Movie](./wireframes/updatedAddMovie.png)
+![Movie](./wireframes/moviedetailsupdated.png)
+
 ## Installation
 
 1. Clone this repository and open in VS Code (or another code editor)

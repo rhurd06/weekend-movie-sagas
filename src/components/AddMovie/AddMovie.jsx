@@ -4,7 +4,7 @@ import { useHistory} from 'react-router-dom';
 // MUI imports
 import { Button, Container, makeStyles, MenuItem, TextField } from "@material-ui/core";
 // Styling imports
-import './AddMovie.css';
+// import './AddMovie.css';
 
 const useStyles = makeStyles(theme => ({
     root: {
